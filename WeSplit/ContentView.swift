@@ -26,7 +26,7 @@ struct ContentView: View {
         
         return amountPerPerson
     }
-    
+    //added a second property observer for tip logic
     var totalAmountCheck : Double {
         let tipSelection = Double(tipPercentages[tipPercentage])
         let orderAmount = Double(checkAmount) ?? 0
@@ -43,7 +43,6 @@ struct ContentView: View {
                 Section {
                     TextField("Amount", text: $checkAmount).keyboardType(.decimalPad)
                 }
-                
                 Section {
                     Text("$\(totalAmountCheck, specifier: "%.2f")")
                 } header: {
